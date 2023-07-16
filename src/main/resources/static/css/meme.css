@@ -1,0 +1,29 @@
+.emoji_angled{
+    transform: rotate(50deg);
+}
+.emoji{
+    width: 100%;
+}
+.absolute-emoji{
+    width: 90px;
+    position: fixed;
+}
+.big-text{
+    font-weight: bold;
+    font-family: "Comic Sans MS", sans-serif;
+    font-size: 3rem;
+    display: block;
+}
+.container{
+    width: 50%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/*////////////////////*/
+
+.stroke-rod{
+    border: 10px solid red;
+    width: 100%;
+    padding: 10rem;
+}

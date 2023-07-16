@@ -1,0 +1,16 @@
+h4 {
+    color: red;
+}
+.comic-style{
+    font-family: "Comic Sans MS", sans-serif!important;
+}
+
+.bg-custom{
+    /*background: #07070d;*/
+    padding-top: 4rem!important;
+    padding-bottom: 4rem!important;
+    background-image: url("../pictures/background_template.png");
+    /*background-blend-mode: color;*/
+    /*background-repeat: round;*/
+
+}
