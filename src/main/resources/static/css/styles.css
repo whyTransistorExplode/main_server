@@ -7,10 +7,50 @@ h4 {
 
 .bg-custom{
     /*background: #07070d;*/
-    padding-top: 4rem!important;
-    padding-bottom: 4rem!important;
+    /*padding-top: 4rem!important;*/
+    /*padding-bottom: 4rem!important;*/
     background-image: url("../pictures/background_template.png");
     /*background-blend-mode: color;*/
     /*background-repeat: round;*/
+}
 
+.interaction-navbar{
+    font-family: Julee, "Courier New", sans-serif;
+    font-size: 1.3rem;
+
+}
+
+
+.interaction-div{
+    flex-direction: column;
+    flex-basis: 100%!important;
+    justify-content: space-between;
+    height: 130px;  /*view port height*/
+}
+
+.login-button{
+    /*border-radius: 25px;*/
+    /*border: none;*/
+    /*background-color: #22D1DC;*/
+    /*padding-top: 1px;*/
+    /*width: 89px;*/
+    /*height: 39px;*/
+    /*color: #EDE7E7;*/
+    /*font-family: Lalezar;*/
+    /*font-size: 28px;*/
+    /*font-style: normal;*/
+    /*font-weight: 400;*/
+    /*line-height: 130.533%; !* 36.549px *!*/
+}
+.footer-fixed-bottom{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.5rem;
+    background-color: black;
+}
+
+.poly-button:hover{
+    stroke: #5510ac;
 }

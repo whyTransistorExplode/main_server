@@ -8,7 +8,6 @@ import lombok.*;
 @NoArgsConstructor
 public class UserDtRequest {
     private String username;
-    private String email;
     private String password;
 }
 

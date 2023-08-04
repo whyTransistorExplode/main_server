@@ -3,72 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <title>Home page</title>
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles_desktop.css">
     <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
 </head>
 <body class="comic-style">
 
 
-    <!--<div class=""><p class="h1 comic-style text-center text-white">hello buddy</p></div>-->
+<!--<div class=""><p class="h1 comic-style text-center text-white">hello buddy</p></div>-->
 
-    <div class="header">
-        <div class="navbar navbar-expand-lg navbar-dark bg-custom">
-            <div class="w-25"><image src="pictures/emoji.png" class="w-50"></image></div>
+<div class="header">
+    <div class="navbar navbar-expand-lg navbar-dark bg-custom align-items-end py-0">
 
-
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled comic-style" href="#">hello buddy</a>
-                    </li>
-                </ul>
-
-
-                <!--<form class="form-inline my-2 my-lg-0">-->
-                <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
-                <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
-                <!--</form>-->
-            </div>
+        <div class="logo-container w-25 navbar-brand">
+            <image src="pictures/home-low-resolution-logo-color-on-transparent-background.png"
+                   class="w-50 m-lg-2"></image>
         </div>
 
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon "></span>
+        </button>
+
+        <div class="interaction-div collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="bg-transparent  ml-auto">
+                <button class="login-button">Login</button>
+            </div>
+
+            <ul class="navbar-nav ml-auto interaction-navbar">
+                <li class="nav-item active">
+                    <p class="nav-link interaction_buttons" >News<span class="sr-only">(current)</span></p>
+                </li>
+                <li class="nav-item nav-dot-item">
+                    <div class="dots-between-interaction"></div>
+                </li>
+                <li class="nav-item">
+                    <p class="nav-link interaction_buttons" >PortFolio</p>
+                </li>
+                <li class="nav-item nav-dot-item">
+                    <div class="dots-between-interaction"></div>
+                </li>
+                <li class="nav-item">
+                    <p class="nav-link interaction_buttons" >Projects</p>
+                </li>
+                <li class="nav-item nav-dot-item">
+                    <div class="dots-between-interaction"></div>
+                </li>
+                <li class="nav-item">
+                    <p class="nav-link interaction_buttons" >Contact</p>
+                </li>
+                <li class="nav-item nav-dot-item">
+                    <div class="dots-between-interaction"></div>
+                </li>
+                <li class="nav-item">
+                    <p class="nav-link interaction_buttons" >Games</p>
+                </li>
+            </ul>
+
+
+            <!--<form class="form-inline my-2 my-lg-0">-->
+            <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+            <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+            <!--</form>-->
+        </div>
     </div>
+
+</div>
 
 <div class="container mt-5">
 
-    <div class="card-group ">
+    <div class="content-container">
 
-        <div class="card border-danger"> card1</div>
-        <div class="card border-danger"> card2</div>
-        <div class="card border-danger"> card3</div>
-        <div class="card border-danger"> card4</div>
+    </div>
+
+
+
+
+</div>
+
+<div class="footer footer-fixed-bottom d-flex ">
+    <div class="position-relative ml-auto mr-1">
+    <svg xmlns="http://www.w3.org/2000/svg" width="182" class="" height="121" viewBox="0 0 182 121" fill="none">
+        <path d="M178.5 6L12 86L178.5 116V6Z" class="poly-button" fill="#050505" stroke="#7302E3" stroke-width="7"></path>
+    </svg>
+        <span class="poly-button-text">Next</span>
     </div>
 </div>
 
-<script src="css/bootstrap/js/bootstrap.js"></script>
+<script src="js/jquery/jquery.min.js"></script>
+<script src="js/bootstrap/bootstrap.js"></script>
+<!--<script src="css/bootstrap/js/bootstrap.bundle.js"></script>-->
+
 </body>
 </html>

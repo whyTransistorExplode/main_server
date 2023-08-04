@@ -1,4 +1,5 @@
 package com.netomass.main_server.enums;
 
-public class Role {
+public enum Role {
+    GUEST, HOME_USERS, ADMIN
 }

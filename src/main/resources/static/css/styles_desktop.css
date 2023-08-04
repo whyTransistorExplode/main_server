@@ -1,0 +1,51 @@
+/*desktop version*/
+@media (min-width: 992px) {
+    .login-button {
+        border-radius: 25px;
+        border: none;
+        background-color: #22D1DC;
+        width: 89px;
+        height: 39px;
+        padding-top: 0.22rem;
+        color: #EDE7E7;
+        font-family: Lalezar, "Droid Sans", sans-serif;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 50.533%; /* 36.549px */
+    }
+
+    .poly-button-text {
+        position: absolute;
+        left: 92px;
+        top: 48px;
+        transform: rotate(-15deg);
+        color: #fff;
+        font-size: 1.5rem;
+        font-family: "Arial Black";
+    }
+    .poly-button-text:hover .poly-button{
+        stroke: #5510ac;
+    }
+
+    .interaction_buttons {
+        margin-left: 0.8rem;
+        margin-right: 0.8rem;
+        margin-bottom: 0.5rem;
+        cursor: default;
+    }
+
+    .nav-dot-item {
+        display: flex;
+        align-items: center;
+    }
+
+    .dots-between-interaction {
+        width: 6px;
+        height: 6px;
+        border: 1px solid #5a5a5a;
+        background-color: #ffffff;
+        border-radius: 50%;
+        margin-bottom: 0.2rem;
+    }
+}
