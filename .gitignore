@@ -7,9 +7,9 @@ src/main/resources/static/css/bootstrap/
 
 ### STS ###
 .apt_generated
-.classpath
+#.classpath
 .factorypath
-.project
+#.project
 .settings
 .springBeans
 .sts4-cache
@@ -48,6 +48,6 @@ buildNumber.properties
 
 # Eclipse m2e generated files
 # Eclipse Core
-.project
+#.project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
