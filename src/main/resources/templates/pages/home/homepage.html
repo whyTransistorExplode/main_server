@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Home page</title>
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/styles_desktop.css">
-    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" th:href="@{/css/styles_desktop.css}">
+    <link rel="stylesheet" th:href="@{/css/fonts.css}">
+    <link rel="stylesheet" th:href="@{/css/bootstrap/css/bootstrap.css}">
 </head>
 <body class="comic-style">
 
@@ -17,7 +17,7 @@
     <div class="navbar navbar-expand-lg navbar-dark bg-custom align-items-end py-0">
 
         <div class="logo-container w-25 navbar-brand">
-            <image src="pictures/home-low-resolution-logo-color-on-transparent-background.png"
+            <image th:src="@{/pictures/home-low-resolution-logo-color-on-transparent-background.png}"
                    class="w-50 m-lg-2"></image>
         </div>
 
@@ -29,7 +29,7 @@
 
         <div class="interaction-div collapse navbar-collapse" id="navbarSupportedContent">
             <div class="bg-transparent  ml-auto">
-                <button class="login-button">Login</button>
+                <button class="login-button" onclick="redirectLogin()">Login</button>
             </div>
 
             <ul class="navbar-nav ml-auto interaction-navbar">
@@ -92,9 +92,10 @@
     </div>
 </div>
 
-<script src="js/jquery/jquery.min.js"></script>
-<script src="js/bootstrap/bootstrap.js"></script>
-<!--<script src="css/bootstrap/js/bootstrap.bundle.js"></script>-->
+<script th:src="@{/js/jquery/jquery.min.js}"></script>
+<!--<script th:src="@{/js/bootstrap/bootstrap.js}"></script>-->
+<script th:src="@{/js/bootstrap/bootstrap.bundle.js}"></script>
+<script th:src="@{/js/utility.js}"></script>
 
 </body>
 </html>

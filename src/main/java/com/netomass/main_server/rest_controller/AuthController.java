@@ -1,4 +1,4 @@
-package com.netomass.main_server.controller;
+package com.netomass.main_server.rest_controller;
 
 
 import com.netomass.main_server.payload.AuthenticationResponse;

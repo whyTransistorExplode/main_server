@@ -7,14 +7,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
-@EnableMethodSecurity()
 @RequiredArgsConstructor
 public class SpringSecurityConfig {
 
@@ -28,11 +29,12 @@ public class SpringSecurityConfig {
                 .and()
                 .csrf()
                 .disable()
+
                 .authorizeHttpRequests()
 
                 .requestMatchers(
-                        "/api/v1/auth/**",
-                        "/login"
+                        "/api/v1/auth/**"
+                        , "/web/pages/op/**"
                 )
                 .permitAll()
 
@@ -46,13 +48,26 @@ public class SpringSecurityConfig {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 
                 .and()
-
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
 //                .logout(LogoutConfigurer::permitAll);
 
         return http.build();
+    }
+
+    @Bean
+    public WebSecurityCustomizer webSecurityCustomizer() {
+        return (web) -> web.ignoring().requestMatchers(
+                "/resources/**"
+                ,"/static/**"
+                ,"/css/**"
+                ,"/js/**"
+                ,"/images/**"
+                ,"/vendor/**"
+                ,"/fonts/**"
+                ,"/**"
+        );
     }
 
 }
