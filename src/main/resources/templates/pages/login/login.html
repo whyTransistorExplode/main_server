@@ -1,18 +1,27 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Spring Security Example </title>
+    <link rel="stylesheet" th:href="@{/css/login/styles.css}">
 </head>
 <body>
-<div th:if="${param.error}">
-    Invalid username and password.
+<div class="half-color-background"></div>
+
+<div class="form-container">
+    <div class="inner-form-div">
+
+        <div class="column-form">
+        <div><label class="user-input-label" for="input-username">User Name :</label></div>
+        <div><label class="user-input-label" for="input-password">Password :</label></div>
+        </div>
+        <div class="column-form">
+        <div><input class="user-input" id="input-username" type="text" /></div>
+        <div><input class="user-input" id="input-password" type="password" /></div>
+        </div>
+        <div><input type="button" onclick="formSubmit()" class="submit-button" value="Sign In"/></div>
+    </div>
 </div>
-<div th:if="${param.logout}">
-    You have been logged out.
-</div>
-<form th:action="@{/api/v1/auth/authenticate}" method="post">
-    <div><label> User Name : <input type="text" name="username"/> </label></div>
-    <div><label> Password: <input type="password" name="password"/> </label></div>
-    <div><input type="submit" value="Sign In"/></div>
-</form>
+
+<script th:src="@{/js/jquery/jquery.min.js}"></script>
+<script th:src="@{/js/login/index.js}"></script>
 </body>
 </html>

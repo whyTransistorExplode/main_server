@@ -6,7 +6,9 @@
     <link rel="stylesheet" th:href="@{/css/styles.css}">
     <link rel="stylesheet" th:href="@{/css/styles_desktop.css}">
     <link rel="stylesheet" th:href="@{/css/fonts.css}">
-    <link rel="stylesheet" th:href="@{/css/bootstrap/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/home/styles.css}">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.css}">
 </head>
 <body class="comic-style">
 
@@ -28,8 +30,20 @@
         </button>
 
         <div class="interaction-div collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="bg-transparent  ml-auto">
-                <button class="login-button" onclick="redirectLogin()">Login</button>
+            <div class="bg-transparent  ml-auto" id="login-auth-div">
+                <button id="login-button" class="login-button" onclick="redirectLogin()">Login</button>
+
+                <div class="dropdown show" id="dropdown-authorized" hidden>
+                    <a class="btn px-1 btn-secondary dropdown-toggle" href="#" role="button" id="profile-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-c" aria-labelledby="profile-dropdown">
+                        <a class="dropdown-item px-1" href="#">Profile</a>
+                        <a class="dropdown-item px-1" href="#">files</a>
+                        <a class="dropdown-item px-1" href="#">group</a>
+                    </div>
+                </div>
             </div>
 
             <ul class="navbar-nav ml-auto interaction-navbar">
@@ -76,6 +90,8 @@
 
     <div class="content-container">
 
+        <button onclick="callAdmin()"> call_admin</button>
+
     </div>
 
 
@@ -95,7 +111,8 @@
 <script th:src="@{/js/jquery/jquery.min.js}"></script>
 <!--<script th:src="@{/js/bootstrap/bootstrap.js}"></script>-->
 <script th:src="@{/js/bootstrap/bootstrap.bundle.js}"></script>
-<script th:src="@{/js/utility.js}"></script>
+<script th:src="@{/js/Global.js}"></script>
+<script th:src="@{/js/home/index.js}"></script>
 
 </body>
 </html>

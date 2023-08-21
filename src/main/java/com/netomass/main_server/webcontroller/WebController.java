@@ -1,14 +1,16 @@
-package com.netomass.main_server.controller;
+package com.netomass.main_server.webcontroller;
 
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+
+import static com.netomass.main_server.constants.TemplatePath.*;
+import static com.netomass.main_server.constants.URLPath.*;
 
 @Controller
-@RequestMapping("/web/pages/op/")
+@RequestMapping(WEB_PAGES_OP)
 @RequiredArgsConstructor
 public class WebController {
 
@@ -17,28 +19,26 @@ public class WebController {
 //        return "/home";
 //    }
 
-
-
     @GetMapping(value = "")
     public String redirectHome() {
         return "redirect:/home";
     }
 
 
-    @RequestMapping("/home")
+    @RequestMapping(HOME)
     public String homePage(){
 
-        return "pages/home/homepage";
+        return PAGES_HOME_HOMEPAGE;
     }
 
-    @GetMapping("/self/portfolio")
+    @GetMapping(SELF_PORTFOLIO)
     public String portfolioPage(){
-        return "pages/portfolio/portfolio";
+        return PAGES_PORTFOLIO_PORTFOLIO;
     }
 
-    @GetMapping("/login")
+    @GetMapping(LOGIN)
     public String loginPage(){
-        return "pages/login/login.html";
+        return PAGES_LOGIN_LOGIN;
     }
 
 }

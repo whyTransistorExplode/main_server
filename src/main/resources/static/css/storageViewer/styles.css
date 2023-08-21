@@ -1,0 +1,120 @@
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    margin: 0;
+}
+
+.body-container{
+    width: 99%;
+    height: 99vh;
+    max-height: 99vh;
+    padding: 0.1rem;
+    margin: 0 auto;
+    font-family: 'DejaVu Sans Mono', monospace;
+    display: flex;
+    flex-direction: column;
+
+}
+.body-container-header{
+    display:flex;
+    align-items: flex-start;
+    border-radius: 0.5rem;
+    border: 0.05rem solid rgba(0, 0, 0, 0.5) !important;
+    padding: 0.7rem;
+    max-height: 14vh;
+
+}
+.root-tree-container{
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    max-height: 86vh;
+}
+.tree{
+    min-width: 145px;
+    border: 1px solid black;
+}
+.in-between{
+    min-width: 0.5rem;
+    background-color: rgba(87,104,171,0.96);
+    cursor: e-resize;
+}
+.root{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    flex:1;
+    min-width: 350px;
+    overflow-y: auto;
+}
+.root-item{
+    width: 100%;
+    cursor: pointer;
+    /*border-bottom: 1px solid rgba(0, 0, 0, 0.44);*/
+    transition: 100ms all;
+    display: flex;
+}
+.root-item-img{
+    width: 16px;
+    height: 16px;
+}
+.root-item-p{
+    width: 95%;
+    margin: 0 0 0 4px;
+    /*margin-left: 4px;*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.root-item:hover{
+    background-color: rgba(0, 0, 0, 0.46);
+}
+.path-text{
+    margin-left: 0.2rem;
+}
+
+
+/*   tree view css   */
+
+
+.tree-view-ul {
+    list-style-type: none;
+}
+
+#tree-view-ul {
+    margin: 0;
+    padding: 0;
+}
+
+.caret {
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none;
+}
+
+.caret::before {
+    content: "\25B6";
+    color: #414141;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.caret-down::before {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Safari */'
+transform: rotate(90deg);
+}
+
+.nested {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+/*   end tree view css   */

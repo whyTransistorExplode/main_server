@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Files</title>
+    <link rel="stylesheet" th:href="@{/css/storageViewer/styles.css}">
+</head>
+<body>
+
+
+<div class="body-container">
+    <div class="body-container-header">
+        <p class="">root: </p>
+        <p class="path-text" id="root-path-text"></p>
+    </div>
+    <div class="root-tree-container" id="root-tree-list">
+        <div class="tree" id="tree-div">
+
+            <ul class="tree-view-ul" id="tree-view-ul">
+                <li><span class="caret">Beverages</span>
+                    <ul class="nested">
+                        <li>Water</li>
+                        <li>Coffee</li>
+                        <li><span class="caret">Tea</span>
+                            <ul class="nested">
+                                <li>Black Tea</li>
+                                <li>White Tea</li>
+                                <li><span class="caret">Green Tea</span>
+                                    <ul class="nested">
+                                        <li>Sencha</li>
+                                        <li>Gyokuro</li>
+                                        <li>Matcha</li>
+                                        <li>Pi Lo Chun</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="in-between" id="in-between"></div>
+        <div class="root" id="root-div"></div>
+    </div>
+</div>
+
+<script th:src="@{/js/jquery/jquery.min.js}"></script>
+<script th:src="@{/js/Global.js}"></script>
+<script th:src="@{/js/storage/index.js}"></script>
+<script th:src="@{/js/storage/treeWidthControl.js}"></script>
+</body>
+</html>

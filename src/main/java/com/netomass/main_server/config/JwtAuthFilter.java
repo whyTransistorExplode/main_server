@@ -38,7 +38,6 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             return;
         }
         jwt = token.substring(7);
-        System.out.println("jwt substringed message :" + jwt + ":");
         name = jwtService.extractName(jwt);
         if (name != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             UserDetails userDetails = this.userDetailsService.FindUserByUsername(name);
