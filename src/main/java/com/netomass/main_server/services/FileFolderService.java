@@ -55,7 +55,6 @@ public class FileFolderService {
         for (File file : files) {
             if (!file.exists()) return;
 
-            FileTime fileTime = (FileTime) Files.getAttribute(Paths.get(file.getPath()), "creationTime");
 
             final DosFileAttributes attr = Files.readAttributes(file.toPath(), DosFileAttributes.class);
             if (attr.isSystem()) continue;

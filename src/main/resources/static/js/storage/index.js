@@ -2,17 +2,16 @@ const root_div = document.getElementById("root-div");
 const root_path_display = document.getElementById("root-path-text");
 const tree_div = document.getElementById('tree-div');
 const data = {index: -1, selected_path: []};
-const treeData = [{file: false, listFiles: [], name: "", path: "/"}];
+const treeData = [{file: false, listFiles: [], name: "", path: "/", state: false, node: null}];
 
 const folder_img = "http://localhost:2354/pictures/folder.png";
 
 const file_img = "http://localhost:2354/pictures/file.png";
 
 function start() {
-
     configure();
+    initialize_tree_hierarchy();
     root_call("/");
-
 }
 
 //** this asynchronously make calls to server and retrieve path directory that are allowed for this specific user
@@ -32,9 +31,10 @@ function root_call(path) {
             display_path();
             draw_div(arrayL);
 
-            console.log(insertTreeData(treeData, path, arrayL))
+            console.log(insertTreeData(treeData, path, arrayL));
             console.log(treeData);
-            // draw_tree_div(arrayL, path);
+
+            draw_tree_div(arrayL, path);
         }
     )
 }
@@ -97,27 +97,56 @@ function draw_div(pathList) {
     // root_div.append(folder)
 }
 
-
 const tree_ul = document.createElement("ul");
-tree_ul.classList.add("tree-view-ul");
-tree_ul.id = "tree-view-ul";
+function initialize_tree_hierarchy(){
+    tree_ul.classList.add("tree-view-ul");
+    tree_ul.id = "tree-view-ul";
 
-function draw_tree_div(tree_paths) {
     tree_div.innerHTML = "";
     tree_div.appendChild(tree_ul);
+}
+function draw_tree_div() {
 
-
+    recursive_tree_div(treeData, tree_ul)
 }
 
+
+
 function recursive_tree_div(tree_list_data, node) {
-    if (tree_list_data == null) return node;
+    if (tree_list_data == null) return;
 
+    for (let i = 0; i < tree_list_data.length; i++) {
+        const b = tree_list_data[i];
 
+        if (b.state) {
+            recursive_tree_div(b.listFiles, b.node);
+            continue;
+        }
+
+        if (b.node != null) {
+            const oldLI = b.node.parentElement;
+            oldLI.querySelector(".tree-item-span").innerHTML = (b.name ? b.name : b.path);
+            b.node.innerHTML = "";
+            recursive_tree_div(b.listFiles, b.node);
+            // oldLI.replaceWith(li);
+        }
+        else {
+            const li = LIProvider(b);
+            const ul = nestedUlProvider();
+
+            li.appendChild(ul);
+            node.appendChild(li);
+            b.node = ul;
+            recursive_tree_div(b.listFiles, b.node);
+        }
+
+        b.state = true;
+    }
 }
 
 
 function forward(id) {
-    const path = map_path(data.list[id].path);
+    const path = (data.list[id].path);
     // ++data.index;
     // data.selected_path.push(path);
     root_call(path);
@@ -136,14 +165,14 @@ function backward() {
 }
 
 
-function map_path(path) {
-    let collector = "";
-    for (let i = 0; i < path.length; i++) {
-        if (path[i] === '\\') collector += '/';
-        else collector += path[i];
-    }
-    return collector;
-}
+// function map_path(path) {
+//     let collector = "";
+//     for (let i = 0; i < path.length; i++) {
+//         if (path[i] === '\\') collector += '/';
+//         else collector += path[i];
+//     }
+//     return collector;
+// }
 
 function display_path() {
 
@@ -167,42 +196,47 @@ function getConfigure(key) {
     return window.localStorage.getItem('conf:' + key)
 }
 
-
-function imageProvider(href, classes) {
-    let b = document.createElement("img");
-    b.src = href;
-    b.classList.add(classes);
-    return b;
-}
-
-function LIProvider(obj) {
-    let li = document.createElement("li");
-    let span = document.createElement("span");
-    span.classList.add("caret")
-    span.innerText = obj.name;
-    li.appendChild(span);
-
-    // let ul = document.createElement("ul");
-    // ul.classList.add("nested");
-    // li.appendChild(ul);
-    return li;
-}
-
-function nestedUlProvider(obj) {
-    let ul = document.createElement("ul");
-    ul.classList.add("nested");
-}
-
 //** arrayL: successResult data, tree_Data: main stored listDAta, path: ??? idk how to describe
-function insertTreeData(tree_data, path, arrayL) {
-    console.log(path);
 
+
+function isContentExistByPath(path) {
+    const res = getObjectByPathTreeData(treeData, path).listFiles;
+    return (res != null && res.length > 0);
+}
+function getContentByPath(path) {
+    return getObjectByPathTreeData(treeData, path).listFiles;
+}
+
+function getObjectByPathTreeData(tree_data, path){
     for (let i = 0; i < tree_data.length; i++) {
-        let b = tree_data[i];
+        const b = tree_data[i];
 
         if (b.path !== path) continue;
+        return b;
+    }
 
-        b.listFiles = arrayL;
+    for (let i = 0; i < tree_data.length; i++) {
+        const b = tree_data[i];
+        const res = getObjectByPathTreeData(b.listFiles, path);
+
+        if (res) return res;
+    }
+}
+function insertTreeData(tree_data, path, arrayL) {
+
+    for (let i = 0; i < tree_data.length; i++) {
+        const b = tree_data[i];
+
+        //found node
+        if (b.path !== path) continue;
+
+        let index = -1;
+        for (let j = 0; j < arrayL.length; j++) {
+            if (arrayL[j].file) continue;
+            b.listFiles[++index] = arrayL[j];
+            b.state = false;
+        }
+        // b.listFiles = arrayL;
         return true;
     }
 
@@ -212,5 +246,7 @@ function insertTreeData(tree_data, path, arrayL) {
     }
 
 }
+
+
 
 start();

@@ -1,12 +1,13 @@
-html{
+html {
     height: 100%;
 }
-body{
+
+body {
     height: 100%;
     margin: 0;
 }
 
-.body-container{
+.body-container {
     width: 99%;
     height: 99vh;
     max-height: 99vh;
@@ -17,8 +18,9 @@ body{
     flex-direction: column;
 
 }
-.body-container-header{
-    display:flex;
+
+.body-container-header {
+    display: flex;
     align-items: flex-start;
     border-radius: 0.5rem;
     border: 0.05rem solid rgba(0, 0, 0, 0.5) !important;
@@ -26,41 +28,51 @@ body{
     max-height: 14vh;
 
 }
-.root-tree-container{
+
+.root-tree-container {
     display: flex;
     width: 100%;
     flex-grow: 1;
     max-height: 86vh;
 }
-.tree{
+
+.tree {
     min-width: 145px;
     border: 1px solid black;
+    overflow: auto;
 }
-.in-between{
+.tree-item-img{
+    cursor: pointer;
+}
+.in-between {
     min-width: 0.5rem;
-    background-color: rgba(87,104,171,0.96);
+    background-color: rgba(87, 104, 171, 0.96);
     cursor: e-resize;
 }
-.root{
+
+.root {
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
-    flex:1;
+    flex: 1;
     min-width: 350px;
     overflow-y: auto;
 }
-.root-item{
+
+.root-item {
     width: 100%;
     cursor: pointer;
     /*border-bottom: 1px solid rgba(0, 0, 0, 0.44);*/
     transition: 100ms all;
     display: flex;
 }
-.root-item-img{
+
+.root-item-img {
     width: 16px;
     height: 16px;
 }
-.root-item-p{
+
+.root-item-p, .tree-item-span {
     width: 95%;
     margin: 0 0 0 4px;
     /*margin-left: 4px;*/
@@ -68,10 +80,12 @@ body{
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.root-item:hover{
+
+.root-item:hover {
     background-color: rgba(0, 0, 0, 0.46);
 }
-.path-text{
+
+.path-text {
     margin-left: 0.2rem;
 }
 
@@ -87,27 +101,34 @@ body{
     margin: 0;
     padding: 0;
 }
+.tree-view-ul{
+    padding-left: 15px;
+}
+.tree-caret-container {
+    display: flex;
+    gap: 3px;
+}
 
 .caret {
-    cursor: pointer;
+    /*cursor: pointer;*/
     -webkit-user-select: none; /* Safari 3.1+ */
     -moz-user-select: none; /* Firefox 2+ */
     -ms-user-select: none; /* IE 10+ */
     user-select: none;
 }
 
-.caret::before {
-    content: "\25B6";
-    color: #414141;
-    display: inline-block;
-    margin-right: 6px;
-}
+/*.caret::before {*/
+/*content: "\25B6";*/
+/*color: #414141;*/
+/*display: inline-block;*/
+/*margin-right: 6px;*/
+/*}*/
 
-.caret-down::before {
-    -ms-transform: rotate(90deg); /* IE 9 */
-    -webkit-transform: rotate(90deg); /* Safari */'
-transform: rotate(90deg);
-}
+/*.caret-down::before {*/
+/*-ms-transform: rotate(90deg); !* IE 9 *!*/
+/*-webkit-transform: rotate(90deg); !* Safari *!'*/
+/*transform: rotate(90deg);*/
+/*}*/
 
 .nested {
     display: none;
