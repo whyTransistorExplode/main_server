@@ -10,8 +10,8 @@ public class TemplatePath {
 
     public static final String PAGES_HOME_HOMEPAGE = "pages/home/homepage";
     public static final String PAGES_PORTFOLIO_PORTFOLIO = "pages/portfolio/portfolio";
-    public static final String PAGES_LOGIN_LOGIN = "pages/login/login.html";
-    public static final String PAGES_ADMIN_STORAGEVIEWERPAGE = "/pages/admin/StorageViewerPage.html";
+    public static final String PAGES_LOGIN_LOGIN = "pages/login/login";
+    public static final String PAGES_USER_STORAGEPAGE = "/pages/user/storagepage";
 
 
     //TODO: create more weblinks

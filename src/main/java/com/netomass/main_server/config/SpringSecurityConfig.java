@@ -40,6 +40,7 @@ public class SpringSecurityConfig {
 
                 .requestMatchers(
                         "/api/v1/auth/**"
+//                        , "/api/v1/share/**"
                         , "/web/pages/op/**"
                         , "/"
                 )

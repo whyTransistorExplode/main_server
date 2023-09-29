@@ -24,7 +24,7 @@ public class PathService {
     public ApiPayload addPath(PathPayload path, long theAdderUserId){
         ApiPayload privilegedUser= userDetailsService.getUserPayloadById(theAdderUserId);
 
-        //if the user who is assigning this path to this other user, is admin then proceed
+        //if the user who is assigning this path to this other user, is user then proceed
         if (!((UserPayload)privilegedUser.getContent()).getRole().equals(Role.ADMIN.name()))
             return ApiPayload.builder().message("failed! You dont have privilege to do that").build();
 
@@ -41,6 +41,8 @@ public class PathService {
     }
 
     public boolean checkPath(String path, User user){
+        if (path == null)
+            return false;
 
         Optional<List<Path>> b = pathRepository.findAllByUserId(user.getId());
         if (b.isEmpty()) return false;

@@ -13,7 +13,9 @@ function formSubmit(){
             ,data: JSON.stringify(reqData)
             , dataType: 'JSON'
             , success: function(result, status, xhr) {
-                setTokenInLocalStorage(result)
+                setTokenInLocalStorage(result);
+
+                location.replace("/web/pages/op/home")
             }
         }
     );

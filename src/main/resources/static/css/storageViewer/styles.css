@@ -78,7 +78,7 @@ body {
     /*margin-left: 4px;*/
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: clip;
 }
 
 .root-item:hover {

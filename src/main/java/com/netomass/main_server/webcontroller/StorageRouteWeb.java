@@ -13,6 +13,6 @@ public class StorageRouteWeb {
 
     @GetMapping(STORAGE)
     public String storagePage(){
-        return PAGES_ADMIN_STORAGEVIEWERPAGE;
+        return PAGES_USER_STORAGEPAGE;
     }
 }

@@ -3,6 +3,7 @@ function redirectLogin(){
     location.replace("/web/pages/op/login");
 }
 
+
 function start(){
 
     authorizedAjaxCall(null, 'get', '/api/v1/user/get-user', userExist)

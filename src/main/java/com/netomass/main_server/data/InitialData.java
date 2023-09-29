@@ -71,7 +71,7 @@ public class InitialData {
 
         //################# paths add
         PathPayload path = PathPayload.builder()
-                .name("")
+                .name("Disk_C")
                 .path("C:/")
                 .userId(savedUser.getId())
                 .build();
@@ -79,7 +79,7 @@ public class InitialData {
         pathService.addPath(path, savedUser.getId());
 
         path = PathPayload.builder()
-                .name("ENG")
+                .name("disk_D")
                 .path("D:/ENG")
                 .userId(savedUser.getId())
                 .build();
